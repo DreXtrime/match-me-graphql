@@ -8,7 +8,7 @@ Graphql attached to a Social matching project backend.
 
 ## Setup
 
-create a `.env` in `server/`:
+create a `.env` in `server/`, recommended copying the example:
 
 ```bash
 cd server/
