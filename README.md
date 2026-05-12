@@ -3,7 +3,7 @@
 Graphql attached to a MatchMe project backend.
 
 ## Pre-requisites
-- Java 21,
+- Java 21
 - Spring Boot
 
 ## Setup
@@ -21,6 +21,10 @@ You can leave the values as the default values will work.
 Make sure you are in the `server/` directory and run it with:
 ```bash
 mvn spring-boot:run
+```
+If you want to use the graphql playground run it with the flag:
+```bash
+mvn spring-boot:run -Dspring-boot.run.arguments=-d
 ```
 
 ## Notes
