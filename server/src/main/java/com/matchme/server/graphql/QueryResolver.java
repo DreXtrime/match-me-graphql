@@ -3,7 +3,6 @@ package com.matchme.server.graphql;
 import com.matchme.server.model.Profile;
 import com.matchme.server.model.User;
 import com.matchme.server.repository.ProfileRepository;
-import com.matchme.server.repository.UserRepository;
 import com.matchme.server.service.ConnectionService;
 import com.matchme.server.service.RecommendationService;
 import com.matchme.server.service.UserService;
