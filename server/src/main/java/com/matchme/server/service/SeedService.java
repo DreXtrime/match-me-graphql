@@ -149,7 +149,6 @@ public class SeedService {
         profile.setLongitude(BigDecimal.valueOf(59.4370));
         profile.setMaxDistanceKm(10);
 
-        System.out.println("Created user: " + email + " with hash: " + user.getPasswordHash());
         profileRepository.save(profile);
     }
 
