@@ -21,6 +21,9 @@ public class DataSeeder implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
+        seedService.createTestUser("tester1@tester.com", "tester1", "tester");
+        seedService.createTestUser("tester2@tester.com", "tester2", "tester");
+
         if (seedDatabase) {
             seedService.seed(seedUserCount);
         }

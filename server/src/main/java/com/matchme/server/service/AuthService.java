@@ -24,6 +24,10 @@ public class AuthService {
             throw new BadRequestException("Email already exists");
         }
 
+        if (request.email().isBlank() || request.password().isBlank()) {
+            throw new BadRequestException("Email and password are required");
+        }
+
         User user = new User();
         user.setEmail(request.email());
         user.setPasswordHash(passwordEncoder.encode(request.password()));
@@ -36,8 +40,7 @@ public class AuthService {
 
     public AuthResponse login(LoginRequest request) {
         User user = userRepository.findByEmail(request.email())
-                .orElseThrow(() -> new BadRequestException("Email already exists"));
-
+                .orElseThrow(() -> new BadRequestException("Invalid credentials"));
         if (!passwordEncoder.matches(request.password(), user.getPasswordHash())) {
             throw new BadRequestException("Invalid credentials");
         }

@@ -136,4 +136,9 @@ public class UserService {
                 profile.getRelationshipGoal()
         );
     }
+
+    public User getUserEntityById(UUID id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("User not found"));
+    }
 }

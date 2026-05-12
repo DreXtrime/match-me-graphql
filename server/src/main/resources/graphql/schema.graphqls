@@ -1,0 +1,65 @@
+type User {
+    id: ID!
+    email: String
+    name: String
+    profilePicture: String
+    bio: Bio
+    profile: Profile
+}
+
+type Bio {
+    id: ID!
+    age: Int
+    interests: [String]
+    fridayNightActivities: [String]
+    musicGenres: [String]
+    relationshipGoal: String
+    user: User!
+}
+
+type Profile {
+    id: ID!
+    firstName: String
+    lastName: String
+    aboutMe: String
+    profilePicture: String
+    maxDistanceKm: Int
+    latitude: Float
+    longitude: Float
+    user: User!
+}
+
+type Query {
+    user(id: ID!): User
+    bio(id: ID!): Bio
+    profile(id: ID!): Profile
+    me: User
+    myBio: Bio
+    myProfile: Profile
+    recommendations: [User]
+    connections: [User]
+}
+
+type AuthPayload {
+    token: String!
+}
+
+type Mutation {
+    register(email: String!, password: String!): AuthPayload!
+    login(email: String!, password: String!): AuthPayload!
+    updateProfile(firstName: String!, lastName: String!, aboutMe: String, maxDistanceKm: Int, latitude: Float, longitude: Float): SimpleResponse!
+    updateBio(age: Int!, interests: [String!]!, fridayNightActivities: [String!]!, musicGenres: [String!]!, relationshipGoal: String!): SimpleResponse!
+    sendConnectionRequest(id: ID!): SimpleResponse!
+    acceptConnectionRequest(id: ID!): SimpleResponse!
+    declineConnectionRequest(id: ID!): SimpleResponse!
+    deleteConnection(id: ID!): SimpleResponse!
+    dismissRecommendation(id: ID!): SimpleResponse!
+}
+
+type Subscription {
+    connectionRequestReceived: User!
+}
+
+type SimpleResponse {
+    message: String!
+}

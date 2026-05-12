@@ -5,6 +5,7 @@ import com.matchme.server.dto.response.ConnectionsResponse;
 import com.matchme.server.dto.response.SimpleResponse;
 import com.matchme.server.exception.BadRequestException;
 import com.matchme.server.exception.NotFoundException;
+import com.matchme.server.graphql.ConnectionEventPublisher;
 import com.matchme.server.model.Connection;
 import com.matchme.server.model.User;
 import com.matchme.server.repository.ConnectionRepository;
@@ -22,6 +23,7 @@ public class ConnectionService {
 
     private final ConnectionRepository connectionRepository;
     private final UserRepository userRepository;
+    private final ConnectionEventPublisher connectionEventPublisher;
 
     public ConnectionsResponse getConnections(UUID userId) {
         List<UUID> connections = connectionRepository
@@ -71,6 +73,7 @@ public class ConnectionService {
         connection.setStatus("pending");
 
         connectionRepository.save(connection);
+        connectionEventPublisher.publishConnectionRequest(target.getId(), requester);
         return new SimpleResponse("Request sent");
     }
 

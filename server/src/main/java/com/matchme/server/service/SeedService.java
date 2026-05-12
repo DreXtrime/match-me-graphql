@@ -75,6 +75,7 @@ public class SeedService {
 
     public void seed(int count) {
         long existing = userRepository.count();
+
         if (existing >= count) {
             System.out.println("Database already has " + existing + " users, skipping seed.");
             return;
@@ -86,11 +87,11 @@ public class SeedService {
         String hashedPassword = passwordEncoder.encode(DEFAULT_PASSWORD);
         int created = 0;
 
+
         for (int i = 0; i < toCreate; i++) {
             String firstName = FIRST_NAMES[random.nextInt(FIRST_NAMES.length)];
             String lastName = LAST_NAMES[random.nextInt(LAST_NAMES.length)];
             String email = firstName.toLowerCase() + "." + lastName.toLowerCase() + i + "@example.com";
-
             if (userRepository.findByEmail(email).isPresent()) continue;
 
             User user = new User();
@@ -121,6 +122,35 @@ public class SeedService {
         }
 
         System.out.println("Seeded " + created + " users.");
+    }
+
+    public void createTestUser(String email, String firstname, String lastname) {
+        if (userRepository.findByEmail(email).isPresent()) {
+            return;
+        }
+
+        User user = new User();
+        user.setEmail(email);
+        user.setPasswordHash(passwordEncoder.encode("password"));
+        userRepository.save(user);
+
+        Profile profile = new Profile();
+        profile.setUser(user);
+        profile.setFirstName(firstname);
+        profile.setLastName(lastname);
+        profile.setAboutMe("about me text");
+        profile.setAge(25);
+        profile.setRelationshipGoal("friendship");
+        profile.setInterests(List.of("programming"));
+        profile.setFridayNightActivities(List.of("gaming"));
+        profile.setMusicGenres(List.of("rock"));
+
+        profile.setLatitude(BigDecimal.valueOf(59.4370));
+        profile.setLongitude(BigDecimal.valueOf(59.4370));
+        profile.setMaxDistanceKm(10);
+
+        System.out.println("Created user: " + email + " with hash: " + user.getPasswordHash());
+        profileRepository.save(profile);
     }
 
     private List<String> randomSubset(String[] options, Random random, int min, int max) {
