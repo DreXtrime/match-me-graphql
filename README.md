@@ -4,7 +4,7 @@ Graphql attached to a MatchMe project backend.
 
 ## Pre-requisites
 - Java 21
-- Spring Boot
+- Maven
 
 ## Setup
 
