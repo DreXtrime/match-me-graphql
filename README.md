@@ -32,7 +32,7 @@ mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=dev
 - 200 users will be created (amount can be modified in the .env)
 - 2 test users will be created for your convenience with these credentials:
     - email: "tester1@tester.com" password: "password"
-    - email: "tester2@tester.com" password: "password"
+    - email: "tester2@tester.com" password: "password"  
     (they are set up to appear in each other's recommendations)
 
 ## Testing
@@ -62,5 +62,5 @@ All request will now use authentication.
 - GraphQL resolvers: `server/src/main/java/com/matchme/server/graphql/`
 
 ## Credits
-[tanelerikneitov](https://gitea.kood.tech/tanelerikneitov)
+[tanelerikneitov](https://gitea.kood.tech/tanelerikneitov)  
 <img src="https://media1.tenor.com/m/7qJXeMvRL_4AAAAd/putting-in-work-locking-in.gif" width="100">
