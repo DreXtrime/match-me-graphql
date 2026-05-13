@@ -356,10 +356,3 @@ The API returns standard HTTP status codes. Common error responses include:
 - `500 Internal Server Error`: Server error
 
 > `/users/:id` endpoints return 404 for both "not found" and "not permitted to view" intentionally. This avoids confirming that a user exists to someone who should not see them.
-
-## Notes
-
-- Logout is handled client-side by discarding the JWT
-- Dates are returned in ISO 8601 format
-- Profile visibility is restricted: profiles are only viewable if the user is recommended, has a pending connection request, or is connected
-
