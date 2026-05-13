@@ -36,8 +36,8 @@ mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=dev
     (they are set up to appear in each other's recommendations)
 
 ## Testing
-Refer to the [REST API Documentation](REST_API.md) for the design of the REST api.
-GraphQL API endpoint: `http://localhost:8080/graphql`
+Refer to the [REST API Documentation](REST_API.md) for the design of the REST api.  
+GraphQL API endpoint: `http://localhost:8080/graphql`  
 GraphQL playground (dev mode only): `http://localhost:8080/graphiql`
 - If the cursor is misaligned in the web-ui try changing page zoom level.
 - From the left side of the interface open the explorer, you will be able to see the api laid out to you.
