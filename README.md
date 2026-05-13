@@ -1,6 +1,6 @@
 # MatchMe Graphql Showcase ![Java](https://img.shields.io/badge/Java-21-orange) ![Maven](https://img.shields.io/badge/Maven-3.8-red) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5-green) ![H2](https://img.shields.io/badge/Database-H2-blue) ![GraphQL](https://img.shields.io/badge/GraphQL-pink)
 
-Graphql api attached to a Social matching backend for a demo project. built with Spring Boot.  
+Graphql api attached to a Social matching backend for a demo project. built with Spring Boot.
 
 ## Pre-requisites
 - Java 21
@@ -32,11 +32,12 @@ mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=dev
 - 200 users will be created (amount can be modified in the .env)
 - 2 test users will be created for your convenience with these credentials:
     - email: "tester1@tester.com" password: "password"
-    - email: "tester2@tester.com" password: "password"  
+    - email: "tester2@tester.com" password: "password"
     (they are set up to appear in each other's recommendations)
 
 ## Testing
-GraphQL API endpoint: `http://localhost:8080/graphql`  
+Refer to the [REST API Documentation](REST_API.md) for the design of the REST api.
+GraphQL API endpoint: `http://localhost:8080/graphql`
 GraphQL playground (dev mode only): `http://localhost:8080/graphiql`
 - If the cursor is misaligned in the web-ui try changing page zoom level.
 - From the left side of the interface open the explorer, you will be able to see the api laid out to you.
@@ -61,5 +62,5 @@ All request will now use authentication.
 - GraphQL resolvers: `server/src/main/java/com/matchme/server/graphql/`
 
 ## Credits
-[tanelerikneitov](https://gitea.kood.tech/tanelerikneitov)  
+[tanelerikneitov](https://gitea.kood.tech/tanelerikneitov)
 <img src="https://media1.tenor.com/m/7qJXeMvRL_4AAAAd/putting-in-work-locking-in.gif" width="100">
