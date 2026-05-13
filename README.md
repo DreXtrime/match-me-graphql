@@ -38,6 +38,7 @@ mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=dev
 ## Testing
 Graphiql Web-UI is on http://localhost:8080/graphiql by default
 - The GraphQL playground is only available in dev mode (-Dspring-boot.run.jvmArguments="-Dspring.profiles.active=dev")
+- If the cursor is misaligned in the web-ui try changing page zoom level.
 - From the left side of the interface open the explorer, you will be able to see the api laid out to you.
 - Everything except login and register will need an auth token. When you login or register the token will be returned and at the bottom of the screen, click "Headers" and add this there
 ```bash
@@ -54,6 +55,11 @@ All request will now use authentication.
 - `recommendations` requires your profile and bio to be complete before returning results
 - Deleting `matchme-db.mv.db` in the `server/` directory resets the database
 - Email is only returned if the target is current user otherwise it is null
+
+
+## File Paths
+- GraphQL schema: `server/src/main/resources/graphql/schema.graphqls`
+- GraphQL resolvers: `server/src/main/java/com/matchme/server/graphql/`
 
 ## Credits
 [tanelerikneitov](https://gitea.kood.tech/tanelerikneitov)  
