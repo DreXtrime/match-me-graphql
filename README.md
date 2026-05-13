@@ -14,7 +14,7 @@ create a `.env` in `server/`, recommended copying the example:
 cd server/
 cp .env.example .env
 ```
-You can leave the values as the default values are setup to work out of the box (Not for production use!).
+You can leave the values unchanged as the default values are setup to work out of the box (Not for production use!).
 
 ## Running the server
 
