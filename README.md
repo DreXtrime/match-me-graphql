@@ -1,6 +1,6 @@
 # MatchMe Graphql Showcase
 
-Graphql attached to a Social matching project backend.
+Graphql api attached to a Social matching backend for a demo project. built with Spring Boot.
 
 ## Pre-requisites
 - Java 21
