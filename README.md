@@ -36,11 +36,11 @@ mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=dev
     (they are set up to appear in each other's recommendations)
 
 ## Testing
-Graphiql Web-UI is on http://localhost:8080/graphiql by default
-- The GraphQL playground is only available in dev mode (-Dspring-boot.run.jvmArguments="-Dspring.profiles.active=dev")
+GraphQL API endpoint: `http://localhost:8080/graphql`  
+GraphQL playground (dev mode only): `http://localhost:8080/graphiql`
 - If the cursor is misaligned in the web-ui try changing page zoom level.
 - From the left side of the interface open the explorer, you will be able to see the api laid out to you.
-- Everything except login and register will need an auth token. When you login or register the token will be returned and at the bottom of the screen, click "Headers" and add this there
+- Everything except login and register will need an auth token. When you login or register the token will be returned and at the bottom of the screen, click "Headers" and add this:
 ```bash
 {
   "Authorization": "Bearer your_user_token_here"
