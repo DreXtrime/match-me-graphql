@@ -1,6 +1,6 @@
 # MatchMe Graphql Showcase ![Java](https://img.shields.io/badge/Java-21-orange) ![Maven](https://img.shields.io/badge/Maven-3.8-red) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5-green) ![H2](https://img.shields.io/badge/Database-H2-blue) ![GraphQL](https://img.shields.io/badge/GraphQL-pink)
 
-Graphql api attached to a Social matching backend for a demo project. built with Spring Boot.
+A GraphQL API layer built on top of a social matching backend, implemented with Spring Boot.
 
 ## Pre-requisites
 - Java 21
