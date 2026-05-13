@@ -53,7 +53,6 @@ All request will now use authentication.
 ## API Limitations
 - `user(id)`, `bio(id)`, and `profile(id)` only work for users who appear in your recommendations, have a pending connection request, or are connected
 - `recommendations` requires your profile and bio to be complete before returning results
-- Deleting `matchme-db.mv.db` in the `server/` directory resets the database
 - Email is only returned if the target is current user otherwise it is null
 
 
