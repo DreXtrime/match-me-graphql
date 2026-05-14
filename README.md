@@ -42,8 +42,6 @@ mvn spring-boot:run
 
 ## Testing
 
-Refer to the [REST API Documentation](REST_API.md) for the REST API endpoints.
-
 | Endpoint | URL |
 |---|---|
 | REST API | `http://localhost:8080` |
@@ -126,8 +124,9 @@ mutation {
 
 ### Testing REST APIs
 
-Use a tool like Postman or the built in IntelliJ Http Client. Get a token via `POST /auth/login` and add it as a Bearer token to subsequent requests. 
-Documentation for the REST_API for the Match me backend can be found at [REST API Documentation](REST_API.md).
+- Use a tool like Postman or the built in IntelliJ Http Client. Get a token via `POST /auth/login` and add it as a Bearer token to subsequent requests.  
+- A [Postman collection](REST_API.postman_collection.json) is also available for you to import.
+- General documentation for the REST_API for the Match me backend can be found at [REST API Documentation](REST_API.md).
 
 ## Troubleshooting
 
