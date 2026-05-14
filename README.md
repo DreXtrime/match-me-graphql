@@ -31,6 +31,10 @@ mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=dev
 ```bash
 mvn spring-boot:run
 ```
+### Shutting down
+
+To stop the application, terminate the running process in the terminal where it was started (for example using `Ctrl + C`)  
+By default the database gets wiped and recreated on every restart. Controlled by "DDL_AUTO=" in the .env
 
 ## Notes
 - This project uses a H2 embedded database, no manual database setup required. Data is stored in `matchme-db.mv.db` — delete this file to reset the database.
