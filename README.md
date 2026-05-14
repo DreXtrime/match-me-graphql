@@ -11,6 +11,7 @@ A GraphQL API layer built on top of a social matching backend, implemented with 
 Clone the project:
 ```bash
 git clone https://gitea.kood.tech/tanelerikneitov/graphql.git
+cd graphql/
 ```
 
 Create a `.env` in `server/`, it is recommended to copy the .env.example:  
