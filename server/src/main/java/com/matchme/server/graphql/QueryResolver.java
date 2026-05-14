@@ -83,4 +83,14 @@ public class QueryResolver {
                 .map(userService::getUserEntityById)
                 .toList();
     }
+
+    @QueryMapping
+    public List<User> connectionRequests(Authentication auth) {
+        UUID id = userId(auth);
+        return connectionService.getConnectionRequests(id)
+                .requests()
+                .stream()
+                .map(userService::getUserEntityById)
+                .toList();
+    }
 }

@@ -90,6 +90,10 @@ public class ConnectionService {
         connection.setAcceptedAt(java.time.LocalDateTime.now());
         connectionRepository.save(connection);
 
+        User acceptedBy = userRepository.findById(userId)
+                .orElseThrow(() -> new NotFoundException("User not found"));
+        connectionEventPublisher.publishConnectionAccepted(requesterId, acceptedBy);
+
         return new SimpleResponse("Connected");
     }
 

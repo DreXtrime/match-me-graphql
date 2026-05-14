@@ -1,6 +1,7 @@
 package com.matchme.server.graphql;
 
 import com.matchme.server.model.User;
+import com.matchme.server.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.graphql.data.method.annotation.SubscriptionMapping;
 import org.springframework.security.core.Authentication;
@@ -19,5 +20,11 @@ public class SubscriptionResolver {
     public Flux<User> connectionRequestReceived(Authentication auth) {
         UUID userId = (UUID) auth.getPrincipal();
         return connectionEventPublisher.getConnectionRequests(userId);
+    }
+
+    @SubscriptionMapping
+    public Flux<User> connectionAccepted(Authentication auth) {
+        UUID userId = (UUID) auth.getPrincipal();
+        return connectionEventPublisher.getConnectionAccepted(userId);
     }
 }

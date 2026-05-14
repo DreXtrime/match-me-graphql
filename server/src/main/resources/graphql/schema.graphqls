@@ -38,6 +38,7 @@ type Query {
     myProfile: Profile
     recommendations: [User]
     connections: [User]
+    connectionRequests: [User]
 }
 
 type AuthPayload {
@@ -58,6 +59,7 @@ type Mutation {
 
 type Subscription {
     connectionRequestReceived: User!
+    connectionAccepted: User!
 }
 
 type SimpleResponse {
