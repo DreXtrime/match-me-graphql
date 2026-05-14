@@ -126,7 +126,7 @@ mutation {
 
 ### Testing REST APIs
 
-Use a tool like Postman or the built in IntelliJ Http Client. Get a token via `POST /auth/login` and add it as a Bearer token to subsequent requests. 
+Use a tool like Postman or the built in IntelliJ Http Client(A [Postman collection](REST_API.postman_collection.json) is also available for you to import). Get a token via `POST /auth/login` and add it as a Bearer token to subsequent requests. 
 Documentation for the REST_API for the Match me backend can be found at [REST API Documentation](REST_API.md).
 
 ## Troubleshooting
