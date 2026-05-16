@@ -42,7 +42,19 @@ By default the database gets wiped and recreated on every restart. Controlled by
 - 2 test users will be created for your convenience that you can use, their credentials are:
     - email: `tester1@tester.com` password: `password`
     - email: `tester2@tester.com` password: `password`  
-    (they are set up to appear in each other's recommendations)
+    The test users are set up to appear in each other's recommendations  
+    If you want to get more users to be returned in the recommendations endpoint, increase the max distance preference of the tester account like so:
+      ```graphql
+      mutation UpdateDistancePreference {
+        updateProfile(
+          maxDistanceKm: 10000000
+          firstName: "tester1"
+          lastName: "tester1"
+          ) {
+            message
+        }
+      }
+      ```
 
 ## Testing
 
